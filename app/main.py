@@ -10,9 +10,6 @@ app = FastAPI(
     openapi_tags=[{
         "name": "calculations",
         "description": "Arithmetic operations endpoints"
-    }, {
-        "name": "health",
-        "description": "Health check endpoints"
     }]
 )
 
@@ -32,10 +29,10 @@ class CalculationResponse(BaseModel):
     detail: str = Query(..., description="Human-readable operation detail")
     operation: str = Query(..., description="Type of operation performed")
 
-@app.get("/health", tags=["health"])
-async def health_check():
-    """Service health check endpoint"""
-    return {"status": "healthy", "service": "calculator-api"}
+# @app.get("/health", tags=["health"])
+# async def health_check():
+#     """Service health check endpoint"""
+#     return {"status": "healthy", "service": "calculator-api"}
 
 @app.post("/calculate", 
           response_model=CalculationResponse, 
