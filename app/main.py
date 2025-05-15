@@ -5,7 +5,7 @@ from typing import Optional
 
 app = FastAPI(
     title="Calculator API",
-    description="A simple calculator microservice with RESTful endpoints",
+    description="A simple calculator microservice :)",
     version="1.0.0",
     openapi_tags=[{
         "name": "calculations",
